@@ -3,7 +3,7 @@ package domain;
 import javax.persistence.*;
 
 @Entity
-public class Twitter {
+public class Tweet {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="Id")
