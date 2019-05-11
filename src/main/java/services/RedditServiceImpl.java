@@ -18,6 +18,11 @@ public class RedditServiceImpl implements RedditService {
     }
 
     @Override
+    public Subreddit addSubreddit(Subreddit subreddit){
+        return redditRepository.save(subreddit);
+    }
+
+    @Override
     public List<Subreddit> getAllSubreddits() {
         return (List<Subreddit>) redditRepository.findAll();
     }
