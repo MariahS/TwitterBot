@@ -1,8 +1,9 @@
 import DS from 'ember-data';
-const { Model } = DS;
+const {
+  Model,
+  attr} = DS;
 
 export default Model.extend({
-  id: DS.attr('integer'),
-  name: DS.attr('string'),
-  url: DS.attr('string')
+  name: attr('string'),
+  url: attr('string')
 });

@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('twitter');
+  this.route('subreddits');
 });
 
 export default Router;

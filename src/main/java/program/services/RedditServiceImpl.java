@@ -20,6 +20,11 @@ public class RedditServiceImpl implements RedditService {
     }
 
     @Override
+    public Subreddit updateSubreddit(Subreddit subreddit){
+        return redditRepository.save(subreddit);
+    }
+
+    @Override
     public Subreddit addSubreddit(Subreddit subreddit){
         return redditRepository.save(subreddit);
     }

@@ -2,6 +2,37 @@
 
 
 
+;define("web/adapters/application", ["exports", "ember-data"], function (_exports, _emberData) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = _emberData.default.JSONAPIAdapter.extend({});
+
+  _exports.default = _default;
+});
+;define("web/adapters/subreddit", ["exports", "ember-data"], function (_exports, _emberData) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = _emberData.default.RESTAdapter.extend({
+    host: 'localhost:8080',
+
+    pathForType() {
+      return 'subreddit';
+    }
+
+  });
+
+  _exports.default = _default;
+});
 ;define("web/app", ["exports", "web/resolver", "ember-load-initializers", "web/config/environment"], function (_exports, _resolver, _emberLoadInitializers, _environment) {
   "use strict";
 
@@ -1173,33 +1204,13 @@
   });
   _exports.default = void 0;
   const {
-    Model
+    Model,
+    attr
   } = _emberData.default;
 
   var _default = Model.extend({
-    id: _emberData.default.attr('integer'),
-    name: _emberData.default.attr('string'),
-    url: _emberData.default.attr('string')
-  });
-
-  _exports.default = _default;
-});
-;define("web/models/tweet", ["exports", "ember-data"], function (_exports, _emberData) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-  const {
-    Model
-  } = _emberData.default;
-
-  var _default = Model.extend({
-    id: _emberData.default.attr('integer'),
-    message: _emberData.default.attr('string'),
-    url: _emberData.default.attr('string'),
-    isposted: _emberData.default.attr('boolean')
+    name: attr('string'),
+    url: attr('string')
   });
 
   _exports.default = _default;
@@ -1226,24 +1237,12 @@
     rootURL: _environment.default.rootURL
   });
   Router.map(function () {
-    this.route('twitter');
+    this.route('subreddits');
   });
   var _default = Router;
   _exports.default = _default;
 });
-;define("web/routes/index", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = Ember.Route.extend({});
-
-  _exports.default = _default;
-});
-;define("web/routes/twitter", ["exports"], function (_exports) {
+;define("web/routes/subreddits", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1277,8 +1276,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "ep2nwgAL",
-    "block": "{\"symbols\":[\"navbar\",\"nav\"],\"statements\":[[4,\"bs-navbar\",null,[[\"type\",\"backgroundColor\",\"collapsed\",\"onCollapse\",\"onExpand\"],[[25,[\"type\"]],[25,[\"bg-info\"]],[25,[\"collapsed\"]],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],true],null],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],false],null]]],{\"statements\":[[0,\"  \"],[7,\"div\"],[11,\"class\",\"navbar-header\"],[9],[0,\"\\n    \"],[1,[24,1,[\"toggle\"]],false],[0,\"\\n    \"],[4,\"link-to\",[\"index\"],[[\"class\"],[\"navbar-brand\"]],{\"statements\":[[0,\"O_O\"]],\"parameters\":[]},null],[0,\"\\n  \"],[10],[0,\"\\n\"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"content\"]],\"expected `navbar.content` to be a contextual component but found a string. Did you mean `(component navbar.content)`? ('web/templates/application.hbs' @ L6:C5) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"nav\"]],\"expected `navbar.nav` to be a contextual component but found a string. Did you mean `(component navbar.nav)`? ('web/templates/application.hbs' @ L7:C7) \"],null]],null,{\"statements\":[[0,\"      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L8:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L8:C22) \"],null],\"index\"],null,{\"statements\":[[0,\"Home\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L9:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L9:C22) \"],null],\"twitter\"],null,{\"statements\":[[0,\"Twitter\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"]],\"parameters\":[2]},null]],\"parameters\":[]},null]],\"parameters\":[1]},null],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "9m1DFM8O",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"p\"],[9],[0,\"Main Page\"],[10],[0,\"\\n\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/application.hbs"
     }
@@ -1312,7 +1311,7 @@
     }
   });
 });
-;define("web/templates/index", ["exports"], function (_exports) {
+;define("web/templates/subreddits", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1321,28 +1320,10 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "eTu1Qkxo",
-    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false]],\"hasEval\":false}",
+    "id": "Ebic4yur",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
-      "moduleName": "web/templates/index.hbs"
-    }
-  });
-
-  _exports.default = _default;
-});
-;define("web/templates/twitter", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = Ember.HTMLBars.template({
-    "id": "LXkRVZY5",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"p\"],[9],[0,\"Twitter bot spot ;)\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
-    "meta": {
-      "moduleName": "web/templates/twitter.hbs"
+      "moduleName": "web/templates/subreddits.hbs"
     }
   });
 
@@ -1371,7 +1352,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("web/app")["default"].create({"name":"web","version":"0.0.0+bad152a6"});
+            require("web/app")["default"].create({"name":"web","version":"0.0.0+43b838d1"});
           }
         
 //# sourceMappingURL=web.map

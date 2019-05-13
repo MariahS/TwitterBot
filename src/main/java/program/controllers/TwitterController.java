@@ -1,20 +1,22 @@
 package program.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import program.domain.Tweet;
 import program.services.TwitterService;
 
 @RestController
+@RequestMapping("twitter")
 public class TwitterController {
-    public static final String BASE_URL = "/api/v1/twitter";
+    @Autowired
     private final TwitterService twitterService;
 
     public TwitterController(TwitterService twitterService) {
         this.twitterService = twitterService;
     }
 
-    @GetMapping(path= "/get")
+    @GetMapping(path= "/view")
     @ResponseBody
     public Tweet getTweetById (@RequestParam Integer id) {
         return twitterService.getTweetById(id);
