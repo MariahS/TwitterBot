@@ -10,7 +10,13 @@
   });
   _exports.default = void 0;
 
-  var _default = _emberData.default.JSONAPIAdapter.extend({});
+  var _default = _emberData.default.RESTAdapter.extend({
+    namespace: 'subreddit',
+    host: 'http://localhost:8080',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
+  });
 
   _exports.default = _default;
 });
@@ -23,7 +29,8 @@
   _exports.default = void 0;
 
   var _default = _emberData.default.RESTAdapter.extend({
-    host: 'localhost:8080',
+    host: 'http://localhost:8080',
+    namespace: 'subreddit',
 
     pathForType() {
       return 'subreddit';
@@ -1209,6 +1216,7 @@
   } = _emberData.default;
 
   var _default = Model.extend({
+    id: attr('integer'),
     name: attr('string'),
     url: attr('string')
   });
@@ -1238,8 +1246,28 @@
   });
   Router.map(function () {
     this.route('subreddits');
+    this.route('subreddit', function () {
+      this.route('list');
+    });
   });
   var _default = Router;
+  _exports.default = _default;
+});
+;define("web/routes/subreddit/list", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({
+    model() {
+      return this.store.findAll('Subreddit');
+    }
+
+  });
+
   _exports.default = _default;
 });
 ;define("web/routes/subreddits", ["exports"], function (_exports) {
@@ -1250,7 +1278,32 @@
   });
   _exports.default = void 0;
 
-  var _default = Ember.Route.extend({});
+  var _default = Ember.Route.extend({
+    model() {
+      return this.store.findAll('subreddit');
+    }
+
+  });
+
+  _exports.default = _default;
+});
+;define("web/serializers/subreddit", ["exports", "ember-data"], function (_exports, _emberData) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = _emberData.default.RESTSerializer.extend({
+    normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+      payload = {
+        subreddits: payload
+      };
+      return this._super(store, primaryModelClass, payload, id, requestType);
+    }
+
+  });
 
   _exports.default = _default;
 });
@@ -1311,6 +1364,24 @@
     }
   });
 });
+;define("web/templates/subreddit/list", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "RT5RnqBR",
+    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h3\"],[9],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n  \"],[7,\"h3\"],[9],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "web/templates/subreddit/list.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
 ;define("web/templates/subreddits", ["exports"], function (_exports) {
   "use strict";
 
@@ -1320,8 +1391,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "Ebic4yur",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "M4UNTiO1",
+    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h3\"],[9],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n  \"],[7,\"h3\"],[9],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits.hbs"
     }
@@ -1352,7 +1423,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("web/app")["default"].create({"name":"web","version":"0.0.0+43b838d1"});
+            require("web/app")["default"].create({"usingCors":true,"corsWithCreds":true,"apiURL":"http://localhost:8080","name":"web","version":"0.0.0+43b838d1"});
           }
         
 //# sourceMappingURL=web.map

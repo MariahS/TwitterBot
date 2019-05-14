@@ -6,7 +6,7 @@ define("web/tests/lint/app.lint-test", [], function () {
   QUnit.module('ESLint | app');
   QUnit.test('adapters/application.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'adapters/application.js should pass ESLint\n\n');
+    assert.ok(false, 'adapters/application.js should pass ESLint\n\n6:2 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
   });
   QUnit.test('adapters/subreddit.js', function (assert) {
     assert.expect(1);
@@ -28,9 +28,17 @@ define("web/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
+  QUnit.test('routes/subreddit/list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/subreddit/list.js should pass ESLint\n\n');
+  });
   QUnit.test('routes/subreddits.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/subreddits.js should pass ESLint\n\n');
+  });
+  QUnit.test('serializers/subreddit.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'serializers/subreddit.js should pass ESLint\n\n');
   });
 });
 define("web/tests/lint/templates.template.lint-test", [], function () {
@@ -40,6 +48,10 @@ define("web/tests/lint/templates.template.lint-test", [], function () {
   QUnit.test('web/templates/application.hbs', function (assert) {
     assert.expect(1);
     assert.ok(true, 'web/templates/application.hbs should pass TemplateLint.\n\n');
+  });
+  QUnit.test('web/templates/subreddit/list.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'web/templates/subreddit/list.hbs should pass TemplateLint.\n\n');
   });
   QUnit.test('web/templates/subreddits.hbs', function (assert) {
     assert.expect(1);
@@ -66,9 +78,17 @@ define("web/tests/lint/tests.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'unit/models/subreddit-test.js should pass ESLint\n\n');
   });
+  QUnit.test('unit/routes/subreddit/list-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/subreddit/list-test.js should pass ESLint\n\n');
+  });
   QUnit.test('unit/routes/subreddits-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/subreddits-test.js should pass ESLint\n\n');
+  });
+  QUnit.test('unit/serializers/subreddit-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/serializers/subreddit-test.js should pass ESLint\n\n');
   });
 });
 define("web/tests/test-helper", ["web/app", "web/config/environment", "@ember/test-helpers", "ember-qunit"], function (_app, _environment, _testHelpers, _emberQunit) {
@@ -114,6 +134,17 @@ define("web/tests/unit/models/subreddit-test", ["qunit", "ember-qunit"], functio
     });
   });
 });
+define("web/tests/unit/routes/subreddit/list-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | subreddit/list', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:subreddit/list');
+      assert.ok(route);
+    });
+  });
+});
 define("web/tests/unit/routes/subreddits-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
@@ -122,6 +153,25 @@ define("web/tests/unit/routes/subreddits-test", ["qunit", "ember-qunit"], functi
     (0, _qunit.test)('it exists', function (assert) {
       let route = this.owner.lookup('route:subreddits');
       assert.ok(route);
+    });
+  });
+});
+define("web/tests/unit/serializers/subreddit-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Serializer | subreddit', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
+
+    (0, _qunit.test)('it exists', function (assert) {
+      let store = this.owner.lookup('service:store');
+      let serializer = store.serializerFor('subreddit');
+      assert.ok(serializer);
+    });
+    (0, _qunit.test)('it serializes records', function (assert) {
+      let store = this.owner.lookup('service:store');
+      let record = store.createRecord('subreddit', {});
+      let serializedRecord = record.serialize();
+      assert.ok(serializedRecord);
     });
   });
 });

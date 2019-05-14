@@ -8,6 +8,10 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('subreddits');
+
+  this.route('subreddit', function() {
+    this.route('list');
+  });
 });
 
 export default Router;

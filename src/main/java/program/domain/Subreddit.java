@@ -1,8 +1,15 @@
 package program.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
+@JsonRootName("subreddit")
 public class Subreddit {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -38,4 +45,5 @@ public class Subreddit {
     public void setUrl(String url) {
         this.url = url;
     }
+
 }

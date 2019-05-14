@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-	host: 'localhost:8080',
+	host: 'http://localhost:8080',
+	namespace: 'subreddit',
 	pathForType(){
 		return 'subreddit'
 	}
