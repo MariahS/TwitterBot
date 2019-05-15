@@ -11,8 +11,8 @@
   _exports.default = void 0;
 
   var _default = _emberData.default.RESTAdapter.extend({
-    namespace: 'subreddit',
     host: 'http://localhost:8080',
+    namespace: 'subreddit',
     headers: {
       'X-Requested-With': 'XMLHttpRequest'
     }
@@ -29,13 +29,7 @@
   _exports.default = void 0;
 
   var _default = _emberData.default.RESTAdapter.extend({
-    host: 'http://localhost:8080',
-    namespace: 'subreddit',
-
-    pathForType() {
-      return 'subreddit';
-    }
-
+    host: 'http://localhost:8080'
   });
 
   _exports.default = _default;
@@ -1245,15 +1239,21 @@
     rootURL: _environment.default.rootURL
   });
   Router.map(function () {
-    this.route('subreddits');
-    this.route('subreddit', function () {
+    this.route('subreddit', function () {});
+    this.route('twitter', function () {
       this.route('list');
+    });
+    this.route('subreddits', function () {
+      this.route('list');
+      this.route('edit', {
+        path: '/:subreddit_id'
+      });
     });
   });
   var _default = Router;
   _exports.default = _default;
 });
-;define("web/routes/subreddit/list", ["exports"], function (_exports) {
+;define("web/routes/subreddits/edit", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1262,15 +1262,15 @@
   _exports.default = void 0;
 
   var _default = Ember.Route.extend({
-    model() {
-      return this.store.findAll('Subreddit');
+    model(params) {
+      return this.store.findRecord('subreddit', params.subreddit_id);
     }
 
   });
 
   _exports.default = _default;
 });
-;define("web/routes/subreddits", ["exports"], function (_exports) {
+;define("web/routes/subreddits/list", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1284,6 +1284,18 @@
     }
 
   });
+
+  _exports.default = _default;
+});
+;define("web/routes/twitter/list", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
 
   _exports.default = _default;
 });
@@ -1364,7 +1376,7 @@
     }
   });
 });
-;define("web/templates/subreddit/list", ["exports"], function (_exports) {
+;define("web/templates/subreddits/edit", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1373,16 +1385,16 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "RT5RnqBR",
-    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h3\"],[9],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n  \"],[7,\"h3\"],[9],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
+    "id": "gApbhQB0",
+    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false]],\"hasEval\":false}",
     "meta": {
-      "moduleName": "web/templates/subreddit/list.hbs"
+      "moduleName": "web/templates/subreddits/edit.hbs"
     }
   });
 
   _exports.default = _default;
 });
-;define("web/templates/subreddits", ["exports"], function (_exports) {
+;define("web/templates/subreddits/list", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1391,10 +1403,28 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "M4UNTiO1",
+    "id": "AgaG2K6q",
     "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h3\"],[9],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n  \"],[7,\"h3\"],[9],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
     "meta": {
-      "moduleName": "web/templates/subreddits.hbs"
+      "moduleName": "web/templates/subreddits/list.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
+;define("web/templates/twitter/list", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "dWrO4IZ2",
+    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "web/templates/twitter/list.hbs"
     }
   });
 

@@ -7,10 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('subreddits');
+  this.route('subreddit', function(){});
 
-  this.route('subreddit', function() {
+  this.route('subreddits', function() {
     this.route('list');
+    this.route('edit', {path: '/:subreddit_id'});
   });
 });
 

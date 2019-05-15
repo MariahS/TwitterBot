@@ -10,7 +10,7 @@ import program.services.RedditService;
 import java.util.List;
 
 @RestController
-@RequestMapping("subreddit")
+@RequestMapping("subreddits")
 public class RedditController {
     @Autowired
     private final RedditService redditService;
