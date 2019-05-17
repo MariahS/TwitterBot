@@ -19,9 +19,8 @@ public class RedditController {
         this.redditService = redditService;
     }
 
-    @GetMapping(value= "/edit/{id}")
-    @ResponseBody
-    public Subreddit getSubreddit (@PathVariable Integer id) {
+    @GetMapping(value = "/edit/{id}")
+    public Subreddit getSubreddit (@PathVariable("id") Integer id) {
         return redditService.getSubredditById(id);
     }
 
@@ -31,9 +30,7 @@ public class RedditController {
         return redditService.updateSubreddit(subreddit);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/list")
-    @ResponseBody
     public List<Subreddit> viewSubreddits(){
         return redditService.getAllSubreddits();
     }

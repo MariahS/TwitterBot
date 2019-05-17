@@ -12,7 +12,7 @@
 
   var _default = _emberData.default.RESTAdapter.extend({
     host: 'http://localhost:8080',
-    namespace: 'subreddit',
+    namespace: 'subreddits',
     headers: {
       'X-Requested-With': 'XMLHttpRequest'
     }
@@ -29,7 +29,10 @@
   _exports.default = void 0;
 
   var _default = _emberData.default.RESTAdapter.extend({
-    host: 'http://localhost:8080'
+    host: 'http://localhost:8080',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    }
   });
 
   _exports.default = _default;
@@ -1240,17 +1243,28 @@
   });
   Router.map(function () {
     this.route('subreddit', function () {});
-    this.route('twitter', function () {
-      this.route('list');
-    });
     this.route('subreddits', function () {
-      this.route('list');
+      this.route('list'), {
+        path: '/list'
+      };
       this.route('edit', {
-        path: '/:subreddit_id'
+        path: '/edit/:subreddit_id'
       });
     });
   });
   var _default = Router;
+  _exports.default = _default;
+});
+;define("web/routes/application", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
+
   _exports.default = _default;
 });
 ;define("web/routes/subreddits/edit", ["exports"], function (_exports) {
@@ -1284,18 +1298,6 @@
     }
 
   });
-
-  _exports.default = _default;
-});
-;define("web/routes/twitter/list", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = Ember.Route.extend({});
 
   _exports.default = _default;
 });
@@ -1341,8 +1343,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "9m1DFM8O",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"p\"],[9],[0,\"Main Page\"],[10],[0,\"\\n\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "T4PYBK1/",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"p\"],[9],[0,\"Main Page\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/application.hbs"
     }
@@ -1385,8 +1387,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "gApbhQB0",
-    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false]],\"hasEval\":false}",
+    "id": "ZccNWAMl",
+    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false],[0,\"\\n\"],[7,\"p\"],[9],[0,\"ddfdf\"],[10],[0,\"\\n\"],[7,\"h3\"],[9],[1,[25,[\"model\",\"url\"]],false],[10],[0,\"\\n\"],[7,\"h3\"],[9],[1,[25,[\"model\",\"name\"]],false],[10],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/edit.hbs"
     }
@@ -1407,24 +1409,6 @@
     "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h3\"],[9],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n  \"],[7,\"h3\"],[9],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/list.hbs"
-    }
-  });
-
-  _exports.default = _default;
-});
-;define("web/templates/twitter/list", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = Ember.HTMLBars.template({
-    "id": "dWrO4IZ2",
-    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false]],\"hasEval\":false}",
-    "meta": {
-      "moduleName": "web/templates/twitter/list.hbs"
     }
   });
 

@@ -10,7 +10,7 @@ define("web/tests/lint/app.lint-test", [], function () {
   });
   QUnit.test('adapters/subreddit.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'adapters/subreddit.js should pass ESLint\n\n');
+    assert.ok(false, 'adapters/subreddit.js should pass ESLint\n\n5:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
   });
   QUnit.test('app.js', function (assert) {
     assert.expect(1);
@@ -28,6 +28,10 @@ define("web/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
+  QUnit.test('routes/application.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/application.js should pass ESLint\n\n');
+  });
   QUnit.test('routes/subreddits/edit.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/subreddits/edit.js should pass ESLint\n\n');
@@ -35,10 +39,6 @@ define("web/tests/lint/app.lint-test", [], function () {
   QUnit.test('routes/subreddits/list.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/subreddits/list.js should pass ESLint\n\n');
-  });
-  QUnit.test('routes/twitter/list.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'routes/twitter/list.js should pass ESLint\n\n');
   });
   QUnit.test('serializers/subreddit.js', function (assert) {
     assert.expect(1);
@@ -61,10 +61,6 @@ define("web/tests/lint/templates.template.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'web/templates/subreddits/list.hbs should pass TemplateLint.\n\n');
   });
-  QUnit.test('web/templates/twitter/list.hbs', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'web/templates/twitter/list.hbs should pass TemplateLint.\n\n');
-  });
 });
 define("web/tests/lint/tests.lint-test", [], function () {
   "use strict";
@@ -86,6 +82,10 @@ define("web/tests/lint/tests.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'unit/models/subreddit-test.js should pass ESLint\n\n');
   });
+  QUnit.test('unit/routes/application-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/application-test.js should pass ESLint\n\n');
+  });
   QUnit.test('unit/routes/subreddits/edit-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/subreddits/edit-test.js should pass ESLint\n\n');
@@ -93,10 +93,6 @@ define("web/tests/lint/tests.lint-test", [], function () {
   QUnit.test('unit/routes/subreddits/list-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/subreddits/list-test.js should pass ESLint\n\n');
-  });
-  QUnit.test('unit/routes/twitter/list-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/routes/twitter/list-test.js should pass ESLint\n\n');
   });
   QUnit.test('unit/serializers/subreddit-test.js', function (assert) {
     assert.expect(1);
@@ -146,6 +142,17 @@ define("web/tests/unit/models/subreddit-test", ["qunit", "ember-qunit"], functio
     });
   });
 });
+define("web/tests/unit/routes/application-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | application', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:application');
+      assert.ok(route);
+    });
+  });
+});
 define("web/tests/unit/routes/subreddits/edit-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
   "use strict";
 
@@ -164,17 +171,6 @@ define("web/tests/unit/routes/subreddits/list-test", ["qunit", "ember-qunit"], f
     (0, _emberQunit.setupTest)(hooks);
     (0, _qunit.test)('it exists', function (assert) {
       let route = this.owner.lookup('route:subreddits/list');
-      assert.ok(route);
-    });
-  });
-});
-define("web/tests/unit/routes/twitter/list-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Route | twitter/list', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks);
-    (0, _qunit.test)('it exists', function (assert) {
-      let route = this.owner.lookup('route:twitter/list');
       assert.ok(route);
     });
   });

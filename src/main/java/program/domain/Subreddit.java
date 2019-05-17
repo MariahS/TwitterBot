@@ -8,8 +8,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@JsonRootName(value = "subreddit")
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
-@JsonRootName("subreddit")
 public class Subreddit {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
