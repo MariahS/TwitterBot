@@ -1327,8 +1327,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "T4PYBK1/",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"p\"],[9],[0,\"Main Page\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "/hi5eYxv",
+    "block": "{\"symbols\":[\"navbar\",\"nav\"],\"statements\":[[4,\"bs-navbar\",null,[[\"type\",\"backgroundColor\",\"collapsed\",\"onCollapse\",\"onExpand\"],[[25,[\"type\"]],[25,[\"bg\"]],[25,[\"collapsed\"]],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],true],null],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],false],null]]],{\"statements\":[[0,\"  \"],[7,\"div\"],[11,\"class\",\"navbar-header\"],[9],[0,\"\\n    \"],[1,[24,1,[\"toggle\"]],false],[0,\"\\n    \"],[4,\"link-to\",[\"index\"],[[\"class\"],[\"navbar-brand\"]],{\"statements\":[[0,\"Brand\"]],\"parameters\":[]},null],[0,\"\\n  \"],[10],[0,\"\\n\"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"content\"]],\"expected `navbar.content` to be a contextual component but found a string. Did you mean `(component navbar.content)`? ('web/templates/application.hbs' @ L6:C5) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"nav\"]],\"expected `navbar.nav` to be a contextual component but found a string. Did you mean `(component navbar.nav)`? ('web/templates/application.hbs' @ L7:C7) \"],null]],null,{\"statements\":[[0,\"      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L8:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L8:C22) \"],null],\"index\"],null,{\"statements\":[[0,\"Home\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L9:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L9:C22) \"],null],\"subreddits.list\"],null,{\"statements\":[[0,\"Subreddits\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"]],\"parameters\":[2]},null]],\"parameters\":[]},null]],\"parameters\":[1]},null],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/application.hbs"
     }
@@ -1389,8 +1389,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "jyfBVnoe",
-    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h2\"],[9],[0,\"id: \"],[1,[24,1,[\"id\"]],false],[10],[0,\"\\n  \"],[7,\"h2\"],[9],[0,\"name: \"],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n  \"],[7,\"h2\"],[9],[0,\"url: \"],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
+    "id": "7EdIVxht",
+    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"div\"],[11,\"class\",\"col-md-8\"],[9],[0,\"\\n  \"],[7,\"table\"],[11,\"class\",\"table table-striped\"],[9],[0,\"\\n    \"],[7,\"tbody\"],[9],[0,\"\\n      \"],[7,\"th\"],[9],[0,\"Subreddits\"],[10],[0,\"\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[7,\"tr\"],[9],[0,\"\\n          \"],[4,\"link-to\",[\"subreddits.edit\",[24,1,[\"id\"]]],null,{\"statements\":[[0,\" \"],[1,[24,1,[\"name\"]],false],[0,\" \"]],\"parameters\":[]},null],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/list.hbs"
     }

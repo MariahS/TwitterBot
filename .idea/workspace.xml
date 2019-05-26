@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec0f68ef-f83c-4128-b76c-deec68c9229a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/application.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/ember-cli-build.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/ember-cli-build.js" afterDir="false" />
@@ -126,7 +125,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="67" />
     <option name="y" value="20" />
     <option name="width" value="1400" />

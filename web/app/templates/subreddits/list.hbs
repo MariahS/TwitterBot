@@ -1,5 +1,12 @@
-{{#each model as |subreddit|}}
-  <h2>id: {{subreddit.id}}</h2>
-  <h2>name: {{subreddit.name}}</h2>
-  <h2>url: {{subreddit.url}}</h2>
-{{/each}}
+<div class="col-md-8">
+  <table class="table table-striped">
+    <tbody>
+      <th>Subreddits</th>
+        {{#each model as |subreddit|}}
+        <tr>
+          {{#link-to "subreddits.edit" subreddit.id}} {{subreddit.name}} {{/link-to}}
+        </tr>
+        {{/each}}
+    </tbody>
+  </table>
+</div>
