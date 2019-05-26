@@ -1,10 +1,16 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
-  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-          console.log(payload);
-          return this._super(store, primaryModelClass, payload, id, requestType);
-   }
-
+  normalizeSingleResponse(store, type, payload){
+    var newPayload = {};
+    newPayload[type.modelName] = payload;
+    console.log(newPayload);
+    return this._super(store, type, newPayload);
+  },
+  normalizeArrayResponse(store, type, payload) {
+      var newPayload = {};
+      newPayload[type.modelName] = payload;
+      console.log(newPayload);
+      return this._super(store, type, newPayload);
+    }
  });
-

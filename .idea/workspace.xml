@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec0f68ef-f83c-4128-b76c-deec68c9229a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/dist/assets/tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/dist/assets/tests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/dist/assets/tests.map" beforeDir="false" afterPath="$PROJECT_DIR$/Web/dist/assets/tests.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/dist/assets/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/dist/assets/web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/dist/assets/web.map" beforeDir="false" afterPath="$PROJECT_DIR$/Web/dist/assets/web.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/controllers/RedditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/controllers/RedditController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/repositories/RedditRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/repositories/RedditRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/app/adapters/subreddit.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/application.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/ember-cli-build.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/ember-cli-build.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/tests/unit/adapters/subreddit-test.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,11 +22,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/program/controllers/RedditController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +95,6 @@
         <option value="$PROJECT_DIR$/src/main/java/program/domain/Reddit.java" />
         <option value="$PROJECT_DIR$/src/main/java/program/services/RedditServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/program/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java" />
         <option value="$PROJECT_DIR$/web/app/adapters/application.js" />
         <option value="$PROJECT_DIR$/web/app/models/subreddit.js" />
         <option value="$PROJECT_DIR$/web/app/routes/subreddits/edit.js" />
@@ -106,6 +106,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/program/repositories/RedditRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/program/controllers/RedditController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java" />
       </list>
     </option>
   </component>
@@ -181,6 +182,15 @@
               <item name="program" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RedditTwitterBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Reddit Twitter Bot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -242,7 +252,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -251,7 +261,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -396,16 +406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/app/models/subreddit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -514,6 +514,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/program/domain/Subreddit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

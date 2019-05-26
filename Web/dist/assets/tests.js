@@ -38,7 +38,7 @@ define("web/tests/lint/app.lint-test", [], function () {
   });
   QUnit.test('serializers/subreddit.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'serializers/subreddit.js should pass ESLint\n\n5:11 - Unexpected console statement. (no-console)');
+    assert.ok(false, 'serializers/subreddit.js should pass ESLint\n\n7:5 - Unexpected console statement. (no-console)\n13:7 - Unexpected console statement. (no-console)');
   });
 });
 define("web/tests/lint/templates.template.lint-test", [], function () {

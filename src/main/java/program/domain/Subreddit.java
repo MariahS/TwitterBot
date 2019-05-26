@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "subreddit")
 @JsonTypeName(value = "subreddit")
-@JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
 public class Subreddit {
 
     public Subreddit() {}
