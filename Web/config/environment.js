@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'web',
     environment,
     rootURL: '/',
-    locationType: 'hash',
+    locationType: 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -18,17 +18,17 @@ module.exports = function(environment) {
     },
 
     APP: {
-      usingCors: false,
-      corsWithCreds: false,
-      apiURL: null
-
+      // Here you can pass flags/options to your application instance
+      // when it is created
     }
   };
 
   if (environment === 'development') {
-    ENV.APP.usingCors = true;
-		ENV.APP.corsWithCreds = true;
-		ENV.APP.apiURL = 'http://localhost:8080'
+    // ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
@@ -41,15 +41,10 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
-    ENV.APP.usingCors = true;
-		ENV.APP.corsWithCreds = true;
-		ENV.APP.apiURL = 'http://localhost:8080'
   }
 
   if (environment === 'production') {
-    ENV.APP.usingCors = true;
-		ENV.APP.corsWithCreds = true;
-		ENV.APP.apiURL = 'http://localhost:8080'
+    // here you can enable a production-specific feature
   }
 
   return ENV;

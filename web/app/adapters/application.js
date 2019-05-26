@@ -1,9 +1,6 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
-export default DS.RESTAdapter.extend({
-	host: 'http://localhost:8080',
-	namespace: 'subreddits',
-	headers: {
-		'X-Requested-With': 'XMLHttpRequest'
-	}
+export default DS.RESTAdapter.extend ({
+   host: 'http://localhost:8080'
 });

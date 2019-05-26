@@ -2,6 +2,6 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   model(params){
-    return this.store.findRecord('subreddit', params.subreddit_id);
+    return this.get('store').findRecord('subreddit', params.id);
   }
 });

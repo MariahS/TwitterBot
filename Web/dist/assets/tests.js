@@ -6,11 +6,7 @@ define("web/tests/lint/app.lint-test", [], function () {
   QUnit.module('ESLint | app');
   QUnit.test('adapters/application.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'adapters/application.js should pass ESLint\n\n6:2 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
-  });
-  QUnit.test('adapters/subreddit.js', function (assert) {
-    assert.expect(1);
-    assert.ok(false, 'adapters/subreddit.js should pass ESLint\n\n5:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
+    assert.ok(false, 'adapters/application.js should pass ESLint\n\n2:8 - \'Ember\' is defined but never used. (no-unused-vars)');
   });
   QUnit.test('app.js', function (assert) {
     assert.expect(1);
@@ -42,7 +38,7 @@ define("web/tests/lint/app.lint-test", [], function () {
   });
   QUnit.test('serializers/subreddit.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'serializers/subreddit.js should pass ESLint\n\n');
+    assert.ok(false, 'serializers/subreddit.js should pass ESLint\n\n5:11 - Unexpected console statement. (no-console)');
   });
 });
 define("web/tests/lint/templates.template.lint-test", [], function () {
@@ -73,10 +69,6 @@ define("web/tests/lint/tests.lint-test", [], function () {
   QUnit.test('unit/adapters/application-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/adapters/application-test.js should pass ESLint\n\n');
-  });
-  QUnit.test('unit/adapters/subreddit-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'unit/adapters/subreddit-test.js should pass ESLint\n\n');
   });
   QUnit.test('unit/models/subreddit-test.js', function (assert) {
     assert.expect(1);
@@ -113,18 +105,6 @@ define("web/tests/unit/adapters/application-test", ["qunit", "ember-qunit"], fun
 
     (0, _qunit.test)('it exists', function (assert) {
       let adapter = this.owner.lookup('adapter:application');
-      assert.ok(adapter);
-    });
-  });
-});
-define("web/tests/unit/adapters/subreddit-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
-  "use strict";
-
-  (0, _qunit.module)('Unit | Adapter | subreddit', function (hooks) {
-    (0, _emberQunit.setupTest)(hooks); // Replace this with your real tests.
-
-    (0, _qunit.test)('it exists', function (assert) {
-      let adapter = this.owner.lookup('adapter:subreddit');
       assert.ok(adapter);
     });
   });

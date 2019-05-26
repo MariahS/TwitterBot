@@ -11,28 +11,7 @@
   _exports.default = void 0;
 
   var _default = _emberData.default.RESTAdapter.extend({
-    host: 'http://localhost:8080',
-    namespace: 'subreddits',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest'
-    }
-  });
-
-  _exports.default = _default;
-});
-;define("web/adapters/subreddit", ["exports", "ember-data"], function (_exports, _emberData) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = _emberData.default.RESTAdapter.extend({
-    host: 'http://localhost:8080',
-    headers: {
-      'X-Requested-With': 'XMLHttpRequest'
-    }
+    host: 'http://localhost:8080'
   });
 
   _exports.default = _default;
@@ -1208,14 +1187,12 @@
   });
   _exports.default = void 0;
   const {
-    Model,
-    attr
+    Model
   } = _emberData.default;
 
   var _default = Model.extend({
-    id: attr('integer'),
-    name: attr('string'),
-    url: attr('string')
+    name: _emberData.default.attr(),
+    url: _emberData.default.attr()
   });
 
   _exports.default = _default;
@@ -1244,12 +1221,12 @@
   Router.map(function () {
     this.route('subreddit', function () {});
     this.route('subreddits', function () {
+      this.route('edit', {
+        path: '/edit/:id'
+      });
       this.route('list'), {
         path: '/list'
       };
-      this.route('edit', {
-        path: '/edit/:subreddit_id'
-      });
     });
   });
   var _default = Router;
@@ -1277,7 +1254,7 @@
 
   var _default = Ember.Route.extend({
     model(params) {
-      return this.store.findRecord('subreddit', params.subreddit_id);
+      return this.get('store').findRecord('subreddit', params.id);
     }
 
   });
@@ -1294,7 +1271,7 @@
 
   var _default = Ember.Route.extend({
     model() {
-      return this.store.findAll('subreddit');
+      return this.get('store').findAll('subreddit');
     }
 
   });
@@ -1311,9 +1288,7 @@
 
   var _default = _emberData.default.RESTSerializer.extend({
     normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-      payload = {
-        subreddits: payload
-      };
+      console.log(payload);
       return this._super(store, primaryModelClass, payload, id, requestType);
     }
 
@@ -1387,8 +1362,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "ZccNWAMl",
-    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false],[0,\"\\n\"],[7,\"p\"],[9],[0,\"ddfdf\"],[10],[0,\"\\n\"],[7,\"h3\"],[9],[1,[25,[\"model\",\"url\"]],false],[10],[0,\"\\n\"],[7,\"h3\"],[9],[1,[25,[\"model\",\"name\"]],false],[10],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "6Adhu0vd",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"h2\"],[9],[0,\"id: \"],[1,[25,[\"model\",\"id\"]],false],[10],[0,\"\\n\"],[7,\"h2\"],[9],[0,\"name: \"],[1,[25,[\"model\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"h2\"],[9],[0,\"url: \"],[1,[25,[\"model\",\"url\"]],false],[10]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/edit.hbs"
     }
@@ -1405,8 +1380,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "AgaG2K6q",
-    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"h1\"],[9],[0,\"Reddit Route\"],[10],[0,\"\\n\"],[1,[23,\"outlet\"],false],[0,\"\\n\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h3\"],[9],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n  \"],[7,\"h3\"],[9],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
+    "id": "jyfBVnoe",
+    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"h2\"],[9],[0,\"id: \"],[1,[24,1,[\"id\"]],false],[10],[0,\"\\n  \"],[7,\"h2\"],[9],[0,\"name: \"],[1,[24,1,[\"name\"]],false],[10],[0,\"\\n  \"],[7,\"h2\"],[9],[0,\"url: \"],[1,[24,1,[\"url\"]],false],[10],[0,\"\\n\"]],\"parameters\":[1]},null]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/list.hbs"
     }
@@ -1437,7 +1412,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("web/app")["default"].create({"usingCors":true,"corsWithCreds":true,"apiURL":"http://localhost:8080","name":"web","version":"0.0.0+43b838d1"});
+            require("web/app")["default"].create({"name":"web","version":"0.0.0+43b838d1"});
           }
         
 //# sourceMappingURL=web.map

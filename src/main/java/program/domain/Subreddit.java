@@ -1,20 +1,32 @@
 package program.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@JsonRootName(value = "subreddit")
+@Table(name = "subreddit")
+@JsonTypeName(value = "subreddit")
 @JsonTypeInfo(include = JsonTypeInfo.As.WRAPPER_OBJECT, use = JsonTypeInfo.Id.NAME)
 public class Subreddit {
-    @Id
+
+    public Subreddit() {}
+
+    public Subreddit(final String name, final String url) {
+        this.name = name;
+        this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("subreddit[id=%d, name='%s', url='%s']", id, name, url);
+    }
+
+
+    @javax.persistence.Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="Id")
-    private Integer id;
+    private int id;
 
     @Column(name="Name")
     private String name;
@@ -22,11 +34,11 @@ public class Subreddit {
     @Column(name="Url")
     private String url;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,7 +1,5 @@
-<h1>Reddit Route</h1>
-{{outlet}}
-
 {{#each model as |subreddit|}}
-  <h3>{{subreddit.url}}</h3>
-  <h3>{{subreddit.name}}</h3>
+  <h2>id: {{subreddit.id}}</h2>
+  <h2>name: {{subreddit.name}}</h2>
+  <h2>url: {{subreddit.url}}</h2>
 {{/each}}

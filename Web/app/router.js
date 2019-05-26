@@ -10,8 +10,8 @@ Router.map(function() {
   this.route('subreddit', function(){});
 
   this.route('subreddits', function() {
+    this.route('edit', {path: '/edit/:id'});
     this.route('list'), {path: '/list'};
-    this.route('edit', {path: '/edit/:subreddit_id'});
   });
 });
 
