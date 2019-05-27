@@ -1197,6 +1197,25 @@
 
   _exports.default = _default;
 });
+;define("web/models/tweet", ["exports", "ember-data"], function (_exports, _emberData) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  const {
+    Model
+  } = _emberData.default;
+
+  var _default = Model.extend({
+    message: _emberData.default.attr(),
+    url: _emberData.default.attr(),
+    isPosted: _emberData.default.attr()
+  });
+
+  _exports.default = _default;
+});
 ;define("web/resolver", ["exports", "ember-resolver"], function (_exports, _emberResolver) {
   "use strict";
 
@@ -1228,11 +1247,28 @@
         path: '/list'
       };
     });
+    this.route('tweets', function () {
+      this.route('timeline'), {
+        path: '/timeline'
+      };
+    });
   });
   var _default = Router;
   _exports.default = _default;
 });
 ;define("web/routes/application", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({});
+
+  _exports.default = _default;
+});
+;define("web/routes/index", ["exports"], function (_exports) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1278,7 +1314,51 @@
 
   _exports.default = _default;
 });
+;define("web/routes/tweets/timeline", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Route.extend({
+    model() {
+      return this.get('store').findAll('tweet');
+    }
+
+  });
+
+  _exports.default = _default;
+});
 ;define("web/serializers/subreddit", ["exports", "ember-data"], function (_exports, _emberData) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = _emberData.default.RESTSerializer.extend({
+    normalizeSingleResponse(store, type, payload) {
+      var newPayload = {};
+      newPayload[type.modelName] = payload;
+      console.log(newPayload);
+      return this._super(store, type, newPayload);
+    },
+
+    normalizeArrayResponse(store, type, payload) {
+      var newPayload = {};
+      newPayload[type.modelName] = payload;
+      console.log(newPayload);
+      return this._super(store, type, newPayload);
+    }
+
+  });
+
+  _exports.default = _default;
+});
+;define("web/serializers/tweet", ["exports", "ember-data"], function (_exports, _emberData) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -1327,8 +1407,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "/hi5eYxv",
-    "block": "{\"symbols\":[\"navbar\",\"nav\"],\"statements\":[[4,\"bs-navbar\",null,[[\"type\",\"backgroundColor\",\"collapsed\",\"onCollapse\",\"onExpand\"],[[25,[\"type\"]],[25,[\"bg\"]],[25,[\"collapsed\"]],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],true],null],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],false],null]]],{\"statements\":[[0,\"  \"],[7,\"div\"],[11,\"class\",\"navbar-header\"],[9],[0,\"\\n    \"],[1,[24,1,[\"toggle\"]],false],[0,\"\\n    \"],[4,\"link-to\",[\"index\"],[[\"class\"],[\"navbar-brand\"]],{\"statements\":[[0,\"Brand\"]],\"parameters\":[]},null],[0,\"\\n  \"],[10],[0,\"\\n\"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"content\"]],\"expected `navbar.content` to be a contextual component but found a string. Did you mean `(component navbar.content)`? ('web/templates/application.hbs' @ L6:C5) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"nav\"]],\"expected `navbar.nav` to be a contextual component but found a string. Did you mean `(component navbar.nav)`? ('web/templates/application.hbs' @ L7:C7) \"],null]],null,{\"statements\":[[0,\"      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L8:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L8:C22) \"],null],\"index\"],null,{\"statements\":[[0,\"Home\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L9:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L9:C22) \"],null],\"subreddits.list\"],null,{\"statements\":[[0,\"Subreddits\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"]],\"parameters\":[2]},null]],\"parameters\":[]},null]],\"parameters\":[1]},null],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "dgrC9E50",
+    "block": "{\"symbols\":[\"navbar\",\"nav\"],\"statements\":[[4,\"bs-navbar\",null,[[\"type\",\"backgroundColor\",\"collapsed\",\"onCollapse\",\"onExpand\"],[\"dark\",\"info\",[25,[\"collapsed\"]],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],true],null],[29,\"action\",[[24,0,[]],[29,\"mut\",[[25,[\"collapsed\"]]],null],false],null]]],{\"statements\":[[0,\"  \"],[7,\"div\"],[11,\"class\",\"navbar-header\"],[9],[0,\"\\n    \"],[1,[24,1,[\"toggle\"]],false],[0,\"\\n    \"],[4,\"link-to\",[\"index\"],[[\"class\"],[\"navbar-brand\"]],{\"statements\":[[0,\"RTB\"]],\"parameters\":[]},null],[0,\"\\n  \"],[10],[0,\"\\n\"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"content\"]],\"expected `navbar.content` to be a contextual component but found a string. Did you mean `(component navbar.content)`? ('web/templates/application.hbs' @ L6:C5) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,1,[\"nav\"]],\"expected `navbar.nav` to be a contextual component but found a string. Did you mean `(component navbar.nav)`? ('web/templates/application.hbs' @ L7:C7) \"],null]],null,{\"statements\":[[0,\"      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L8:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L8:C22) \"],null],\"index\"],null,{\"statements\":[[0,\"Home\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L9:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L9:C22) \"],null],\"subreddits.list\"],null,{\"statements\":[[0,\"Subreddits\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n      \"],[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"item\"]],\"expected `nav.item` to be a contextual component but found a string. Did you mean `(component nav.item)`? ('web/templates/application.hbs' @ L10:C9) \"],null]],null,{\"statements\":[[4,\"component\",[[29,\"-assert-implicit-component-helper-argument\",[[24,2,[\"link-to\"]],\"expected `nav.link-to` to be a contextual component but found a string. Did you mean `(component nav.link-to)`? ('web/templates/application.hbs' @ L10:C22) \"],null],\"tweets.timeline\"],null,{\"statements\":[[0,\"Timeline\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\n\"]],\"parameters\":[2]},null]],\"parameters\":[]},null]],\"parameters\":[1]},null],[1,[23,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/application.hbs"
     }
@@ -1362,6 +1442,24 @@
     }
   });
 });
+;define("web/templates/index", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "PTfRtUdE",
+    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"container-fluid\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"row\"],[9],[0,\"\\n\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "web/templates/index.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
 ;define("web/templates/subreddits/edit", ["exports"], function (_exports) {
   "use strict";
 
@@ -1393,6 +1491,24 @@
     "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"div\"],[11,\"class\",\"col-md-8\"],[9],[0,\"\\n  \"],[7,\"table\"],[11,\"class\",\"table table-striped\"],[9],[0,\"\\n    \"],[7,\"tbody\"],[9],[0,\"\\n      \"],[7,\"th\"],[9],[0,\"Subreddits\"],[10],[0,\"\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[7,\"tr\"],[9],[0,\"\\n          \"],[4,\"link-to\",[\"subreddits.edit\",[24,1,[\"id\"]]],null,{\"statements\":[[0,\" \"],[1,[24,1,[\"name\"]],false],[0,\" \"]],\"parameters\":[]},null],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/list.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
+;define("web/templates/tweets/timeline", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "CjFbFf8a",
+    "block": "{\"symbols\":[\"tweet\"],\"statements\":[[7,\"div\"],[11,\"class\",\"container\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"card-columns\"],[9],[0,\"\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"  \"],[7,\"div\"],[11,\"class\",\"card\"],[9],[0,\"\\n    \"],[7,\"img\"],[12,\"src\",[30,[[24,1,[\"url\"]]]]],[11,\"class\",\"card-img-top\"],[11,\"alt\",\"...\"],[9],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"card-body\"],[9],[0,\"\\n      \"],[7,\"p\"],[11,\"class\",\"card-text\"],[9],[1,[24,1,[\"message\"]],false],[10],[0,\"\\n    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "web/templates/tweets/timeline.hbs"
     }
   });
 

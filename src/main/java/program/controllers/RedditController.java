@@ -24,7 +24,6 @@ public class RedditController {
         return subreddit;
     }
 
-    // list method not returning desired JSON result
     @RequestMapping(method = RequestMethod.GET)
     public List<Subreddit> getAllSubreddits(){
         List<Subreddit> subredditList = redditService.getAllSubreddits();

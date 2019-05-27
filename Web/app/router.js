@@ -13,6 +13,10 @@ Router.map(function() {
     this.route('edit', {path: '/edit/:id'});
     this.route('list'), {path: '/list'};
   });
+
+  this.route('tweets', function() {
+    this.route('timeline'), {path: '/timeline'};
+  });
 });
 
 export default Router;

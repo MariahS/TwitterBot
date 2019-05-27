@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="card-columns">
+{{#each model as |tweet|}}
+  <div class="card">
+    <img src="{{tweet.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">{{tweet.message}}</p>
+    </div>
+  </div>
+{{/each}}
+</div>
+</div>
