@@ -13,4 +13,5 @@ public interface TwitterService {
     Tweet addTweet(Tweet tweet);
     List<Tweet> getAllTweets();
     List<Status> getTimelineTweets() throws TwitterException;
+    Tweet getTweetByImageUrl(String imageUrl);
 }

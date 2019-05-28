@@ -25,6 +25,10 @@ public class TwitterServiceImpl implements TwitterService {
         return statuses;
     }
 
+    public Tweet getTweetByImageUrl(String imageUrl){
+        return twitterRepository.findTweetByImageUrl(imageUrl);
+    }
+
     @Override
     public Tweet getTweetById(Integer id) {
         return twitterRepository.findById(id).get();
