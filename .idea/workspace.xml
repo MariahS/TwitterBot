@@ -2,24 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec0f68ef-f83c-4128-b76c-deec68c9229a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/program/domain/SubredditPost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/program/domain/json/SubredditJson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/twitterbot/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/repositories/TwitterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/repositories/TwitterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/services/RedditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/services/RedditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/services/RedditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/services/RedditServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/services/TwitterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/services/TwitterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/program/services/TwitterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/program/services/TwitterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/Application$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/repositories/TwitterRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/repositories/TwitterRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/services/RedditService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/services/RedditService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/services/RedditServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/services/RedditServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/services/TwitterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/services/TwitterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/program/services/TwitterServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program/services/TwitterServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/app/templates/application.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/web/app/templates/application.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/ember-cli-build.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/ember-cli-build.js" afterDir="false" />
@@ -39,24 +21,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/program/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            <state relative-caret-position="119">
+              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#corsConfigurer#0;class#Application#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/twitterbot/Bot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="331">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#RedditProcess#0;class#Bot#0" />
@@ -295,7 +276,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,7 +285,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -671,21 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/program/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#corsConfigurer#0;class#Application#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/twitterbot/Bot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="331">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#RedditProcess#0;class#Bot#0" />
@@ -694,6 +664,16 @@
             <element signature="method#extractPostsFromJson#0;class#Bot#0" />
             <element signature="method#getSubredditJson#0;class#Bot#0" />
             <element signature="method#getRandomSubreddit#0;class#Bot#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/program/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="method#corsConfigurer#0;class#Application#0" />
           </folding>
         </state>
       </provider>

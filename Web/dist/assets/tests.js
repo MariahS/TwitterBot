@@ -75,7 +75,7 @@ define("web/tests/lint/templates.template.lint-test", [], function () {
   });
   QUnit.test('web/templates/subreddits/list.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'web/templates/subreddits/list.hbs should pass TemplateLint.\n\nweb/templates/subreddits/list.hbs\n  5:8  error  Incorrect indentation for `{{#each}}` beginning at L5:C8. Expected `{{#each}}` to be at an indentation of 6 but was found at 8.  block-indentation\n  6:8  error  Incorrect indentation for `<tr>` beginning at L6:C8. Expected `<tr>` to be at an indentation of 10 but was found at 8.  block-indentation\n');
+    assert.ok(false, 'web/templates/subreddits/list.hbs should pass TemplateLint.\n\nweb/templates/subreddits/list.hbs\n  9:4  error  Incorrect indentation for `<li>` beginning at L9:C4. Expected `<li>` to be at an indentation of 6 but was found at 4.  block-indentation\n  10:54  error  you must use double quotes in templates  quotes\n');
   });
   QUnit.test('web/templates/tweets/timeline.hbs', function (assert) {
     assert.expect(1);

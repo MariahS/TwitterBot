@@ -1451,8 +1451,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "PTfRtUdE",
-    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"container-fluid\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"row\"],[9],[0,\"\\n\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "cUwXVg6p",
+    "block": "{\"symbols\":[],\"statements\":[[1,[23,\"outlet\"],false],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"jumbotron jumbotron-fluid\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"container\"],[9],[0,\"\\n    \"],[7,\"h1\"],[11,\"class\",\"display-4\"],[9],[0,\"Welcome to Reddit Twitter Bot!\"],[10],[0,\"\\n    \"],[7,\"p\"],[9],[0,\"(name subject to change)\"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/index.hbs"
     }
@@ -1469,8 +1469,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "6Adhu0vd",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"h2\"],[9],[0,\"id: \"],[1,[25,[\"model\",\"id\"]],false],[10],[0,\"\\n\"],[7,\"h2\"],[9],[0,\"name: \"],[1,[25,[\"model\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"h2\"],[9],[0,\"url: \"],[1,[25,[\"model\",\"url\"]],false],[10]],\"hasEval\":false}",
+    "id": "KsEbet+q",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"jumbotron jumbotron-fluid\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"container\"],[9],[0,\"\\n      \"],[7,\"h1\"],[11,\"class\",\"display-4\"],[9],[0,\"Edit Subreddit\"],[10],[0,\"\\n    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n  \"],[7,\"form\"],[11,\"class\",\"col-md-6\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"form-group row\"],[9],[0,\"\\n      \"],[7,\"label\"],[11,\"for\",\"subredditName\"],[11,\"class\",\"col-sm-3 col-form-label\"],[9],[0,\"Subreddit Name\"],[10],[0,\"\\n      \"],[7,\"div\"],[11,\"class\",\"col-sm-8\"],[9],[0,\"\\n        \"],[7,\"input\"],[11,\"class\",\"form-control\"],[11,\"id\",\"subredditName\"],[12,\"value\",[25,[\"model\",\"name\"]]],[11,\"type\",\"text\"],[9],[10],[0,\"\\n      \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"form-group row\"],[9],[0,\"\\n      \"],[7,\"label\"],[11,\"for\",\"subredditUrl\"],[11,\"class\",\"col-sm-3 col-form-label\"],[9],[0,\"Subreddit Url\"],[10],[0,\"\\n      \"],[7,\"div\"],[11,\"class\",\"col-sm-8\"],[9],[0,\"\\n        \"],[7,\"input\"],[11,\"class\",\"form-control\"],[11,\"id\",\"subredditUrl\"],[12,\"value\",[25,[\"model\",\"url\"]]],[11,\"type\",\"text\"],[9],[10],[0,\"\\n      \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"form-group row\"],[9],[0,\"\\n      \"],[7,\"div\"],[11,\"class\",\"col-sm-10\"],[9],[0,\"\\n        \"],[7,\"button\"],[11,\"class\",\"btn btn-primary\"],[11,\"type\",\"submit\"],[9],[0,\"SAVE\"],[10],[0,\"\\n      \"],[10],[0,\"\\n    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/edit.hbs"
     }
@@ -1487,8 +1487,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "7EdIVxht",
-    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"div\"],[11,\"class\",\"col-md-8\"],[9],[0,\"\\n  \"],[7,\"table\"],[11,\"class\",\"table table-striped\"],[9],[0,\"\\n    \"],[7,\"tbody\"],[9],[0,\"\\n      \"],[7,\"th\"],[9],[0,\"Subreddits\"],[10],[0,\"\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[7,\"tr\"],[9],[0,\"\\n          \"],[4,\"link-to\",[\"subreddits.edit\",[24,1,[\"id\"]]],null,{\"statements\":[[0,\" \"],[1,[24,1,[\"name\"]],false],[0,\" \"]],\"parameters\":[]},null],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "KtIARG55",
+    "block": "{\"symbols\":[\"subreddit\"],\"statements\":[[7,\"div\"],[11,\"class\",\"jumbotron jumbotron-fluid\"],[9],[0,\"\\n  \"],[7,\"div\"],[11,\"class\",\"container\"],[9],[0,\"\\n    \"],[7,\"h1\"],[11,\"class\",\"display-4\"],[9],[0,\"Subreddit List\"],[10],[0,\"\\n  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"col-md-8\"],[9],[0,\"\\n  \"],[7,\"ul\"],[11,\"class\",\"list-group\"],[9],[0,\"\\n\"],[4,\"each\",[[25,[\"model\"]]],null,{\"statements\":[[0,\"    \"],[7,\"li\"],[11,\"class\",\"list-group-item\"],[9],[0,\"\\n      \"],[4,\"link-to\",[\"subreddits.edit\",[24,1,[\"id\"]]],[[\"class\"],[\"list-group-item list-group-item-action\"]],{\"statements\":[[0,\" \"],[1,[24,1,[\"name\"]],false],[0,\" \"]],\"parameters\":[]},null],[0,\"\\n    \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "web/templates/subreddits/list.hbs"
     }

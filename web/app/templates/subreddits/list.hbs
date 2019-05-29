@@ -1,12 +1,14 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Subreddit List</h1>
+  </div>
+</div>
 <div class="col-md-8">
-  <table class="table table-striped">
-    <tbody>
-      <th>Subreddits</th>
-        {{#each model as |subreddit|}}
-        <tr>
-          {{#link-to "subreddits.edit" subreddit.id}} {{subreddit.name}} {{/link-to}}
-        </tr>
-        {{/each}}
-    </tbody>
-  </table>
+  <ul class="list-group">
+    {{#each model as |subreddit|}}
+    <li class="list-group-item">
+      {{#link-to "subreddits.edit" subreddit.id class='list-group-item list-group-item-action'}} {{subreddit.name}} {{/link-to}}
+    </li>
+    {{/each}}
+  </ul>
 </div>
